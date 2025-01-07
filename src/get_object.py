@@ -2,7 +2,7 @@ from typing import Any
 
 import requests
 
-from config import API_URL_OBJECT_GET_3
+from config import API_URL_OBJECT_3
 
 
 class GetObject:
