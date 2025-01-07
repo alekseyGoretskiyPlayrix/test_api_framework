@@ -17,4 +17,4 @@ class CreateObject:
     }
 
     def create_object(self):
-        response = requests.post("https://api.restful-api.dev/objects", data=self.payload)
+        response = requests.post("https://api.restful-api.dev/objects", json=self.payload)
