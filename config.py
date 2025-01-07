@@ -1,5 +1,8 @@
 # Base URLs for the REST API
+#POST
 API_URL_OBJECT_CREATION = "https://api.restful-api.dev/objects"
+#GET
+API_URL_OBJECT_GET_3 = "https://api.restful-api.dev/objects?id=3"
 
 # Default payloads
 PAYLOAD_OBJECT_CREATION = {
