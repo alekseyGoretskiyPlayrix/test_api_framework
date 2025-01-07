@@ -2,6 +2,8 @@ from typing import Any
 
 import requests
 
+from config import PAYLOAD_OBJECT_CREATION, API_URL_OBJECT_CREATION
+
 
 class CreateObject:
     response: Any
@@ -17,4 +19,4 @@ class CreateObject:
     }
 
     def create_object(self):
-        response = requests.post("https://api.restful-api.dev/objects", json=self.payload)
+        response = requests.post(API_URL_OBJECT_CREATION, json=PAYLOAD_OBJECT_CREATION)
