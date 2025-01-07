@@ -19,4 +19,5 @@ class CreateObject:
     }
 
     def create_object(self):
-        response = requests.post(API_URL_OBJECT_CREATION, json=PAYLOAD_OBJECT_CREATION)
+        self.response = requests.post(API_URL_OBJECT_CREATION, json=PAYLOAD_OBJECT_CREATION)
+        return self.response.json()
