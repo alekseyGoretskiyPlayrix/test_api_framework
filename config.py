@@ -4,7 +4,9 @@ API_URL_OBJECT_CREATION = "https://api.restful-api.dev/objects"
 # GET
 API_URL_OBJECT_GET_3 = "https://api.restful-api.dev/objects?id=3"
 # PUT
-API_URL_OBJECT_7 = "https://api.restful-api.dev/objects/7"
+API_URL_OBJECT_PUT_7 = "https://api.restful-api.dev/objects/7"
+#DELETE
+API_URL_OBJECT_DELETE_WITHOUT_ID = "https://api.restful-api.dev/objects/"
 
 # Default payloads
 PAYLOAD_OBJECT_CREATION = {
