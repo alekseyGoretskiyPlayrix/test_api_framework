@@ -1,3 +1,4 @@
+from http.client import responses
 from typing import Any
 
 import requests
@@ -13,4 +14,12 @@ class CreateObject:
         return self.response.json()
 
     def get_id_created_object(self):
-        return self.response.json()['id']
+        response_created_object = self.response.json()
+        return response_created_object['id']
+
+object = CreateObject()
+response = object.create_object()
+print(response)
+
+id = object.get_id_created_object()
+print(id)

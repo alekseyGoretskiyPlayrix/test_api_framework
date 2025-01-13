@@ -2,10 +2,10 @@
 # POST
 API_URL_OBJECT_CREATION = "https://api.restful-api.dev/objects"
 # GET
-API_URL_OBJECT_GET_3 = "https://api.restful-api.dev/objects?id=3"
+API_URL_OBJECT_GET = "https://api.restful-api.dev/objects/"
 # PUT
-API_URL_OBJECT_PUT_7 = "https://api.restful-api.dev/objects/7"
-#DELETE
+API_URL_OBJECT_PUT = "https://api.restful-api.dev/objects/"
+# DELETE
 API_URL_OBJECT_DELETE_WITHOUT_ID = "https://api.restful-api.dev/objects/"
 
 # Default payloads
@@ -27,5 +27,14 @@ PAYLOAD_OBJECT_UPDATE = {
         "CPU model": "Intel Core i9",
         "Hard disk size": "1 TB",
         "color": "silver"
+    }
+}
+
+PAYLOAD_GET_OBJECT_3 = {
+    "id": "3",
+    "name": "Apple iPhone 12 Pro Max",
+    "data": {
+        "color": "Cloudy White",
+        "capacity GB": 512
     }
 }
