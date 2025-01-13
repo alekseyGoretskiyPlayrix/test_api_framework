@@ -32,11 +32,25 @@ class TestObjects:
         assert object.get_response_json().get('data', {}).get('Hard disk size') == PAYLOAD_OBJECT_CREATION['data'][
             'Hard disk size'], "Hard disk size does not match the expected value"
 
-    def test_get_object(self):
-        object = GetObject().get_object(3)
-        assert object['id'] == PAYLOAD_GET_OBJECT_3['id']
+    def test_get_object(self, create_default_object):
+        object = create_default_object
+        object_get_object = GetObject()
+        object_get_object.get_object(object.get_id_created_object())
 
-    # тут еще добавить остальные поля + статус код
+        assert object_get_object.response.status_code == STATUS_CODE_200, "Object retrieved successfully"
+
+        assert object_get_object.get_response_json().get('name') == PAYLOAD_OBJECT_CREATION[
+            'name'], "Name does not match the expected value"
+        assert object_get_object.get_response_json().get('data', {}).get('year') == PAYLOAD_OBJECT_CREATION['data'][
+            'year'], "Year does not match the expected value"
+        assert object_get_object.get_response_json().get('data', {}).get('price') == PAYLOAD_OBJECT_CREATION['data'][
+            'price'], "Price does not match the expected value"
+        assert object_get_object.get_response_json().get('data', {}).get('CPU model') == \
+               PAYLOAD_OBJECT_CREATION['data'][
+                   'CPU model'], "CPU model does not match the expected value"
+        assert object_get_object.get_response_json().get('data', {}).get('Hard disk size') == \
+               PAYLOAD_OBJECT_CREATION['data'][
+                   'Hard disk size'], "Hard disk size does not match the expected value"
 
     def test_update_object(self):
         object = UpdateObject()

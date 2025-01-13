@@ -1,13 +1,11 @@
-from typing import Any
-
 import requests
 
-from config import API_URL_OBJECT_GET
+from config import API_BASE_URL
+from src.base_object import BaseObject
 
 
-class GetObject:
-    response: Any
+class GetObject(BaseObject):
 
-    def get_object(self, object_id):
-        self.response = requests.get(f'{API_URL_OBJECT_GET}{object_id}')
-        return self.response.json()
+    def get_object(self, object_id: int):
+        self.response = requests.get(f'{API_BASE_URL}/{object_id}')
+        return self.get_response_json()
