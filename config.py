@@ -1,4 +1,5 @@
 # Base URLs for the REST API
+API_BASE_URL = "https://api.restful-api.dev/objects"
 # POST
 API_URL_OBJECT_CREATION = "https://api.restful-api.dev/objects"
 # GET
@@ -7,6 +8,9 @@ API_URL_OBJECT_GET = "https://api.restful-api.dev/objects/"
 API_URL_OBJECT_PUT = "https://api.restful-api.dev/objects/"
 # DELETE
 API_URL_OBJECT_DELETE_WITHOUT_ID = "https://api.restful-api.dev/objects/"
+
+#Status codes
+STATUS_CODE_200 = 200
 
 # Default payloads
 PAYLOAD_OBJECT_CREATION = {

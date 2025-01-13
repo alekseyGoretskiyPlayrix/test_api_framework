@@ -1,25 +1,14 @@
-from http.client import responses
-from typing import Any
-
 import requests
 
-from config import PAYLOAD_OBJECT_CREATION, API_URL_OBJECT_CREATION
+from src.base_object import BaseObject
 
 
-class CreateObject:
-    response: Any
+class CreateObject(BaseObject):
 
-    def create_object(self):
-        self.response = requests.post(API_URL_OBJECT_CREATION, json=PAYLOAD_OBJECT_CREATION)
-        return self.response.json()
+    def create_object(self, payload: dict):
+        self.response = requests.post(self.base_url, json=payload)
+        return self.get_response_json()
 
     def get_id_created_object(self):
-        response_created_object = self.response.json()
-        return response_created_object['id']
-
-object = CreateObject()
-response = object.create_object()
-print(response)
-
-id = object.get_id_created_object()
-print(id)
+        response_data = self.get_response_json()
+        return response_data.get('id')
