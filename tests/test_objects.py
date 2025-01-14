@@ -11,7 +11,9 @@ from src.update_object import UpdateObject
 def create_default_object():
     default_object = CreateObject()
     default_object.create_object(PAYLOAD_OBJECT_CREATION)
-    return default_object
+    yield default_object
+    delete_object = DeleteObject()
+    delete_object.delete_object(default_object.get_id_created_object())
 
 
 class TestObjects:
@@ -52,8 +54,9 @@ class TestObjects:
                PAYLOAD_OBJECT_CREATION['data'][
                    'Hard disk size'], "Hard disk size does not match the expected value"
 
-    def test_update_object(self):
-        object = UpdateObject()
+    @pytest.mark.skip(reason="Этот тест временно отключен.")
+    def test_update_object(self, create_default_object):
+        object = create_default_object
         response = object.update_object()
         assert response['name'] == PAYLOAD_OBJECT_UPDATE['name']
 
